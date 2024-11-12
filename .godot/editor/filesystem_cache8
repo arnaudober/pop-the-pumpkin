@@ -1,0 +1,17 @@
+ea4bc82a6ad023ab7ee23ee620429895
+::res://::1731385930
+Main.gd::GDScript::-1::1731385698::0::1::::<>Node2D<>::
+Main.tscn::PackedScene::4157949233809124481::1731385800::0::1::::<><>::uid://rniftwn65od::::res://Object.tscn<>uid://dtadji2irpid8::::res://pumpkin_sprite.png
+Object.gd::GDScript::-1::1731384528::0::1::::<>Node2D<>::
+object.png::CompressedTexture2D::6643296082236767727::1731384418::1731384436::1::::<><>::
+Object.tscn::PackedScene::35898322062459295::1731385800::0::1::::<><>::res://Object.gd<>uid://c1wcd67oit2ql::::res://object.png
+pumpkin_sprite.png::CompressedTexture2D::8493048765608682351::1731385912::1731385936::1::::<><>::
+README.md::TextFile::-1::1731385097::0::1::::<><>::
+::res://addons/::1731383047
+::res://addons/godot-git-plugin/::1731383047
+git_plugin.gdextension::GDExtension::-1::1731383047::0::1::::<><>::
+plugin.cfg::TextFile::-1::1731383047::0::1::::<><>::
+THIRDPARTY.md::TextFile::-1::1731383047::0::1::::<><>::
+::res://addons/godot-git-plugin/linux/::1731383047
+::res://addons/godot-git-plugin/macos/::1731383047
+::res://addons/godot-git-plugin/win64/::1731383047
