@@ -1,0 +1,96 @@
+[gd_scene load_steps=12 format=3 uid="uid://b0ie200wrb7g4"]
+
+[ext_resource type="PackedScene" uid="uid://rniftwn65od" path="res://Object.tscn" id="1_l0qc8"]
+[ext_resource type="Texture2D" uid="uid://dtadji2irpid8" path="res://pumpkin_sprite.png" id="1_uw6ng"]
+[ext_resource type="Script" path="res://Main.gd" id="1_yd356"]
+
+[sub_resource type="Animation" id="Animation_iaf7o"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("PumpkinSprite:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+
+[sub_resource type="Animation" id="Animation_wrxx3"]
+resource_name = "rotate"
+length = 2.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("PumpkinSprite:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = false
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 6.28319]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_27xb2"]
+_data = {
+"RESET": SubResource("Animation_iaf7o"),
+"rotate": SubResource("Animation_wrxx3")
+}
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_hykps"]
+rough = true
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_wgym2"]
+size = Vector2(1152, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_rf7ox"]
+size = Vector2(15, 648)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_bikur"]
+size = Vector2(1152, 15)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0ekgl"]
+size = Vector2(15, 648)
+
+[node name="Node2D" type="Node2D"]
+script = ExtResource("1_yd356")
+gem_scene = ExtResource("1_l0qc8")
+
+[node name="PumpkinSprite" type="Sprite2D" parent="."]
+position = Vector2(575, 300)
+texture = ExtResource("1_uw6ng")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_27xb2")
+}
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+physics_material_override = SubResource("PhysicsMaterial_hykps")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(576, 640)
+shape = SubResource("RectangleShape2D_wgym2")
+
+[node name="StaticBody2D2" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D2"]
+position = Vector2(7.5, 324)
+shape = SubResource("RectangleShape2D_rf7ox")
+
+[node name="StaticBody2D3" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D3"]
+position = Vector2(576, 7.5)
+shape = SubResource("RectangleShape2D_bikur")
+
+[node name="StaticBody2D4" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D4"]
+position = Vector2(1144.5, 324)
+shape = SubResource("RectangleShape2D_0ekgl")
