@@ -17,7 +17,7 @@ func throw_object():
 	velocity = direction.normalized() * speed  # Set velocity based on direction and speed
 	
 # Detect mouse clicks on the gem
-func _input(event):
+func _input():
 	# Check if the user clicked the left mouse button
 	if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT and event.pressed:
 		# Check if the mouse position is within the bounds of the gem's sprite
